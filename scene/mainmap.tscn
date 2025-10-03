@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfwps5tmxe0ff"]
+
+[ext_resource type="Texture2D" uid="uid://dw1vgealiw62w" path="res://assets/map/mainmap.png" id="1_wtsqj"]
+
+[node name="Mainmap" type="Sprite2D"]
+texture_filter = 3
+position = Vector2(1920, 0)
+scale = Vector2(-1, 1)
+texture = ExtResource("1_wtsqj")
+centered = false

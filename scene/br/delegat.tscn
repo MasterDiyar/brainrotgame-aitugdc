@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1k05vpq1ed2b"]
+
+[ext_resource type="Script" uid="uid://bj0egxatx2k43" path="res://scene/norm/Delegat.cs" id="1_e7i7q"]
+[ext_resource type="Texture2D" uid="uid://deyg5h5l2nw1q" path="res://assets/normis/delegat.png" id="1_vtjgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtjgy"]
+size = Vector2(42, 123)
+
+[node name="Delegat" type="Node2D"]
+texture_filter = 3
+script = ExtResource("1_e7i7q")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-5, 2.5)
+shape = SubResource("RectangleShape2D_vtjgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vtjgy")

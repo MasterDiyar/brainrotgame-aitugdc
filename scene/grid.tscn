@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://blqepajif10tq"]
+
+[ext_resource type="Script" uid="uid://b7l5uumk3wykq" path="res://script/Grid.cs" id="1_5xkqp"]
+[ext_resource type="Texture2D" uid="uid://bopjj5mxyljiu" path="res://assets/map/pos.png" id="2_ctyjr"]
+
+[node name="grid" type="Node2D"]
+script = ExtResource("1_5xkqp")
+
+[node name="Pos" type="Sprite2D" parent="."]
+texture = ExtResource("2_ctyjr")
+centered = false

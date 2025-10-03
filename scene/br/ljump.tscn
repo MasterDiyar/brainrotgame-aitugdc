@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbpt3ssoly788"]
+
+[ext_resource type="Texture2D" uid="uid://dqu8s7kl3sety" path="res://assets/brainrots/lirililarila/lirilarijump.png" id="1_214vh"]
+[ext_resource type="Script" uid="uid://cfysoeuulkfor" path="res://scene/br/Ljump.cs" id="1_nwnwm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_214vh"]
+size = Vector2(145, 26)
+
+[node name="LJUMP" type="Node2D"]
+texture_filter = 3
+script = ExtResource("1_nwnwm")
+
+[node name="Lirilarijump" type="Sprite2D" parent="."]
+texture = ExtResource("1_214vh")
+
+[node name="Area2D" type="Area2D" parent="Lirilarijump"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lirilarijump/Area2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_214vh")

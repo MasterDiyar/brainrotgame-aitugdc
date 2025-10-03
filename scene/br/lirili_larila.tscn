@@ -1,0 +1,78 @@
+[gd_scene load_steps=14 format=3 uid="uid://b3duka2ph7pw2"]
+
+[ext_resource type="Script" uid="uid://b0s5m6kxvwpt" path="res://script/brainrots/LiriliLarila.cs" id="1_y2fi2"]
+[ext_resource type="Texture2D" uid="uid://btjppsjejqjhs" path="res://assets/brainrots/lirililarila/Lirl1.png" id="2_bl1vy"]
+[ext_resource type="Texture2D" uid="uid://bri2cuh0r2d1u" path="res://assets/brainrots/lirililarila/Lirl2.png" id="3_ctvl7"]
+[ext_resource type="Texture2D" uid="uid://bb0n4wa6oic0j" path="res://assets/brainrots/lirililarila/Lirl3.png" id="4_mwbmh"]
+[ext_resource type="Texture2D" uid="uid://da54ukjh1ttwu" path="res://assets/brainrots/lirililarila/Lirl4.png" id="5_y74ks"]
+[ext_resource type="Texture2D" uid="uid://bph5be8ax7c0x" path="res://assets/brainrots/lirililarila/Lirl5.png" id="6_elnvt"]
+[ext_resource type="Texture2D" uid="uid://gbdmhk5c5elc" path="res://assets/brainrots/lirililarila/Lirl6.png" id="7_6ytj0"]
+[ext_resource type="Texture2D" uid="uid://cnx80pj3j3uvv" path="res://assets/brainrots/lirililarila/Lirl7.png" id="8_47eck"]
+[ext_resource type="Texture2D" uid="uid://78bwksn27753" path="res://assets/brainrots/lirililarila/Lirl8.png" id="9_qojji"]
+[ext_resource type="Texture2D" uid="uid://byuofas8qksdo" path="res://assets/brainrots/lirililarila/Lirl9.png" id="10_jbfxb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0x2q"]
+size = Vector2(160, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t2bbu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bl1vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ctvl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mwbmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y74ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_elnvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6ytj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_47eck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qojji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jbfxb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2fi2"]
+size = Vector2(126, 128)
+
+[node name="Lirili Larila" type="Node2D"]
+texture_filter = 3
+script = ExtResource("1_y2fi2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(64, 64)
+shape = SubResource("RectangleShape2D_i0x2q")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t2bbu")
+frame_progress = 0.36120343
+centered = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D2" type="Area2D" parent="." groups=["Unit"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(63, 64)
+shape = SubResource("RectangleShape2D_y2fi2")

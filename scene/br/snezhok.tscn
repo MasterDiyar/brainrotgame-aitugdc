@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://belwoskv4oven"]
+
+[ext_resource type="Script" uid="uid://catx1ily0dq7v" path="res://scene/br/Snezhok.cs" id="1_uoqow"]
+[ext_resource type="Texture2D" uid="uid://bfe6bw8clqc7s" path="res://assets/brainrots/frigo camelo/snow.png" id="1_ype3d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ype3d"]
+radius = 17.029387
+
+[node name="snezhok" type="Node2D"]
+texture_filter = 3
+script = ExtResource("1_uoqow")
+
+[node name="Snow" type="Sprite2D" parent="."]
+texture = ExtResource("1_ype3d")
+
+[node name="Area2D" type="Area2D" parent="Snow"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snow/Area2D"]
+shape = SubResource("CircleShape2D_ype3d")

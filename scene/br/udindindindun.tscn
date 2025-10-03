@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbegv217brmk"]
+
+[ext_resource type="Texture2D" uid="uid://7c0nhxuvjljo" path="res://assets/brainrots/udindindin/Sprite-0016.png" id="1_bgnpp"]
+[ext_resource type="Texture2D" uid="uid://sbj1ic1wytcb" path="res://assets/brainrots/udindindin/Sprite-0017.png" id="2_t4k6x"]
+[ext_resource type="Texture2D" uid="uid://rn2rcoponr2n" path="res://assets/brainrots/udindindin/Sprite-0018.png" id="3_xraxg"]
+[ext_resource type="Texture2D" uid="uid://cldicqcabnt27" path="res://assets/brainrots/udindindin/Sprite-0019.png" id="4_d6vno"]
+[ext_resource type="Texture2D" uid="uid://dmvm6o3kpupgu" path="res://assets/brainrots/udindindin/Sprite-0020.png" id="5_60xax"]
+[ext_resource type="Texture2D" uid="uid://cvpmnhf4v3rjj" path="res://assets/brainrots/udindindin/Sprite-0021.png" id="6_dgj76"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_am4tn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bgnpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t4k6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xraxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d6vno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_60xax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dgj76")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iav2"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asvt7"]
+size = Vector2(200, 40)
+
+[node name="udindindindun" type="Node2D"]
+texture_filter = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_am4tn")
+frame_progress = 0.1965241
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="." groups=["Unit"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Unit"]]
+shape = SubResource("RectangleShape2D_5iav2")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(128, 0)
+shape = SubResource("RectangleShape2D_asvt7")
+debug_color = Color(0.65882355, 0.5176471, 0, 0.34117648)

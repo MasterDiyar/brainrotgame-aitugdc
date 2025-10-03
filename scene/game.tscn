@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://cw65l715jvrpl"]
+
+[ext_resource type="PackedScene" uid="uid://dfwps5tmxe0ff" path="res://scene/mainmap.tscn" id="1_5kiuu"]
+[ext_resource type="Script" uid="uid://5rwt6g847ccy" path="res://script/GameManager.cs" id="1_xwcet"]
+[ext_resource type="PackedScene" uid="uid://blqepajif10tq" path="res://scene/grid.tscn" id="2_dbls1"]
+[ext_resource type="Texture2D" uid="uid://kvsc8p0el67e" path="res://assets/map/bitcoins.png" id="4_p1ry8"]
+[ext_resource type="FontFile" uid="uid://c4wlm7p7vx28j" path="res://other/alagard.ttf" id="4_xlg7c"]
+[ext_resource type="PackedScene" uid="uid://c1euuafnffp4f" path="res://scene/cnoth.tscn" id="6_xlg7c"]
+[ext_resource type="PackedScene" uid="uid://c1k05vpq1ed2b" path="res://scene/br/delegat.tscn" id="7_qpk70"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ll5lq"]
+font = ExtResource("4_xlg7c")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpk70"]
+font = ExtResource("4_xlg7c")
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="game" type="Node2D"]
+texture_filter = 3
+script = ExtResource("1_xwcet")
+
+[node name="Mainmap" parent="." instance=ExtResource("1_5kiuu")]
+
+[node name="cnoth" parent="." instance=ExtResource("6_xlg7c")]
+offset_left = 8.0
+offset_top = 578.0
+offset_right = 8.0
+offset_bottom = 578.0
+
+[node name="ColorRect" type="ColorRect" parent="cnoth"]
+layout_mode = 0
+offset_left = 555.0
+offset_top = 244.0
+offset_right = 1220.0
+offset_bottom = 459.0
+color = Color(0.8089983, 0.8089983, 0.8089982, 1)
+
+[node name="Label" type="Label" parent="cnoth/ColorRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 665.0
+offset_bottom = 213.0
+text = "Type:
+Cost:"
+label_settings = SubResource("LabelSettings_ll5lq")
+
+[node name="grid" parent="." node_paths=PackedStringArray("_brainrotSpawnNode", "about") instance=ExtResource("2_dbls1")]
+_brainrotSpawnNode = NodePath("../brainrots")
+about = NodePath("../cnoth/ColorRect/Label")
+
+[node name="PurseCounter" type="Label" parent="."]
+offset_left = 79.0
+offset_top = 18.0
+offset_right = 119.0
+offset_bottom = 41.0
+text = "Purse:"
+label_settings = SubResource("LabelSettings_qpk70")
+
+[node name="Bitcoins" type="Sprite2D" parent="."]
+position = Vector2(40, 31)
+texture = ExtResource("4_p1ry8")
+
+[node name="brainrots" type="Node2D" parent="."]
+
+[node name="normals" type="Node2D" parent="."]
+
+[node name="Delegat" parent="normals" instance=ExtResource("7_qpk70")]
+position = Vector2(1242, 286)
