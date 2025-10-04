@@ -44,13 +44,15 @@ size = Vector2(1200, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl5j"]
 size = Vector2(126, 128)
 
-[node name="frigo" type="Node2D"]
+[node name="frigo" type="Node2D" node_paths=PackedStringArray("_attackTimer", "area2D")]
 texture_filter = 3
 script = ExtResource("1_jpl5j")
+_attackTimer = NodePath("Timer")
+area2D = NodePath("Area2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4txyv")
-frame_progress = 0.2164723
+frame_progress = 0.8323246
 centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -59,9 +61,9 @@ centered = false
 position = Vector2(640, 64)
 shape = SubResource("RectangleShape2D_p2ux3")
 
-[node name="Area2D2" type="Area2D" parent="." groups=["Unit"]]
+[node name="telo" type="Area2D" parent="." groups=["Unit"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="telo"]
 position = Vector2(63, 64)
 shape = SubResource("RectangleShape2D_jpl5j")
 

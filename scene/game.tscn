@@ -60,7 +60,7 @@ offset_left = 79.0
 offset_top = 18.0
 offset_right = 119.0
 offset_bottom = 41.0
-text = "Purse:"
+text = "Prompt:"
 label_settings = SubResource("LabelSettings_qpk70")
 
 [node name="Bitcoins" type="Sprite2D" parent="."]

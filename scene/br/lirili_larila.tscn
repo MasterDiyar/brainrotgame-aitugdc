@@ -52,11 +52,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2fi2"]
 size = Vector2(126, 128)
 
-[node name="Lirili Larila" type="Node2D"]
+[node name="Lirili Larila" type="Node2D" node_paths=PackedStringArray("_attackTimer", "area2D")]
 texture_filter = 3
 script = ExtResource("1_y2fi2")
+_attackTimer = NodePath("Timer")
+area2D = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(64, 64)
@@ -66,13 +69,14 @@ shape = SubResource("RectangleShape2D_i0x2q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_t2bbu")
-frame_progress = 0.36120343
+frame_progress = 0.99873817
 centered = false
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Area2D2" type="Area2D" parent="." groups=["Unit"]]
+[node name="body" type="Area2D" parent="." groups=["Unit"]]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 position = Vector2(63, 64)
 shape = SubResource("RectangleShape2D_y2fi2")

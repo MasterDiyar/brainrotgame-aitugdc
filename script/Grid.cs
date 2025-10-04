@@ -18,9 +18,12 @@ public partial class Grid : Node2D
 	[Export] private Label about;
 	
 	bool _isChoosing = false;
+
+	private GameManager parent;
 	
 	public override void _Ready()
 	{
+		parent = GetParent<GameManager>();
 		_chooseGrid = GetNode<Sprite2D>("Pos");
 	}
 
@@ -62,12 +65,17 @@ public partial class Grid : Node2D
 		if (Input.IsActionJustPressed("yes"))
 		{
 			var mob = GetMob(MobGridPos);
-			if (Gridrot[ChooseGridPos.X, ChooseGridPos.Y] == null) {
+			if (Gridrot[ChooseGridPos.X, ChooseGridPos.Y] == null &&  parent.Money >= mob.Cost ) {
 				Gridrot[ChooseGridPos.X, ChooseGridPos.Y] = mob;
-				Gridrot[ChooseGridPos.X, ChooseGridPos.Y].Position = StartPos + (ChooseGridPos * 128) + (ChooseGridPos.Y * Vector2.Down * 21) - (Vector2.One * 2);
-				GetParent().AddChild(Gridrot[ChooseGridPos.X, ChooseGridPos.Y]);
+				GD.Print("Before: " + parent.Money+" ", mob.Cost);
+				parent.Money -= mob.Cost;
+				GD.Print("After: " + parent.Money);
+				mob.Position = StartPos + (ChooseGridPos * 128) + (ChooseGridPos.Y * Vector2.Down * 21) - (Vector2.One * 2);
+				GetParent().AddChild(mob);
+
+				var pPos = ChooseGridPos;
+				mob.TreeExited += () => Gridrot[pPos.X, pPos.Y] = null;
 				
-				Gridrot[ChooseGridPos.X, ChooseGridPos.Y].TreeExited += () => Gridrot[ChooseGridPos.X, ChooseGridPos.Y] = null;
 				_isChoosing = false;
 			}
 			else GD.Print(Gridrot[ChooseGridPos.X, ChooseGridPos.Y]);
@@ -78,8 +86,8 @@ public partial class Grid : Node2D
 
 	public BrainRoted GetMob(Vector2 point)
 	{
-		string[] mobAbout = ["Type: Lirili larila\n Cost: 50"],
-				paths = ["res://scene/br/lirili_larila.tscn"];
+		string[] mobAbout = ["Type: Lirili larila\n Cost: 50", "Type: Frigo Camelini\n Cost: 120"],
+				paths = ["res://scene/br/lirili_larila.tscn", "res://scene/br/frigo.tscn"];
 		try {
         	int width = 3;
         	int index = (int)point.Y * width + (int)point.X;

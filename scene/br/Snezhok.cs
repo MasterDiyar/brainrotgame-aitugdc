@@ -28,6 +28,6 @@ public partial class Snezhok : Node2D
 	{
 		AliveTime -= delta;
 		if (AliveTime <= 0) QueueFree();
-		sprite2D.Position += Vector2.Right * 5*(float)delta;
+		sprite2D.Position += Vector2.Right * 600*(float)delta;
 	}
 }
