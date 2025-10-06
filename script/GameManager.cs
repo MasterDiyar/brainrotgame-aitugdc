@@ -13,7 +13,7 @@ public partial class GameManager : Node2D
 	}
 	public override void _Ready()
 	{
-		Money = 900;
+		Money = 110;
 		MoneyLabel = GetNode<Label>("PurseCounter");
 		info = GetNode<Label>("cnoth/ColorRect/Label2");
 		info.Text = (IsJoystickConnected())? "Controls:\n \u2b06-up \u2b07-down \u2b05-left \u27a1-right \n X-Choose O-exit \u2612-delete " : 

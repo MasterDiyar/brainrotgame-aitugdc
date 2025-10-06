@@ -21,7 +21,7 @@ public partial class Bombard : BrainRoted
 	public void DealDamage()
 	{
 		var sharp = GD.Load<PackedScene>("res://scene/br/boom.tscn").Instantiate<Boom>();
-		sharp.Position = _icon.GlobalPosition;
+		sharp.Position = _icon.GlobalPosition+Vector2.One*64;
 		GetParent().AddChild(sharp);
 		QueueFree();
 	}

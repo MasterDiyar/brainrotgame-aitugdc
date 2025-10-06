@@ -30,7 +30,7 @@ public partial class TunTunTun : BrainRoted
 	public void DealDamage()
 	{
 		var sharp = GD.Load<PackedScene>("res://scene/br/ljump.tscn").Instantiate<Ljump>();
-		sharp.Position = _icon.GlobalPosition+Vector2.Down*25+Vector2.Right*220;
+		sharp.Position = _icon.GlobalPosition+Vector2.Down*25+Vector2.Right*180;
 		sharp.Rotation = Mathf.Pi/2;
 		sharp.AliveTime = 0.33f;
 		sharp.Scale = new Vector2(1, 2);

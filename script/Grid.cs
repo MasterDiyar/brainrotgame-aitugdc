@@ -82,13 +82,13 @@ public partial class Grid : Node2D
 	public void ChooseInputs() //work in process
 	{
 		if (Input.IsActionJustPressed("right")) {
-			MobGridPos += (MobGridPos.X < 2) ? Vector2I.Right : Vector2I.Zero;	
+			MobGridPos += (MobGridPos.X < 2) ? Vector2I.Right : Vector2I.Left*2;	
 		} if (Input.IsActionJustPressed("left")) {
-			MobGridPos += (MobGridPos.X > 0) ? Vector2I.Left : Vector2I.Zero;
+			MobGridPos += (MobGridPos.X > 0) ? Vector2I.Left : Vector2I.Right*2;
 		}if (Input.IsActionJustPressed("up")) {	
-			MobGridPos += (MobGridPos.Y > 0) ? Vector2I.Up : Vector2I.Zero;
+			MobGridPos += (MobGridPos.Y > 0) ? Vector2I.Up : Vector2I.Down*2;
 		}if (Input.IsActionJustPressed("down")) {
-			MobGridPos += (MobGridPos.Y < 2) ? Vector2I.Down : Vector2I.Zero;
+			MobGridPos += (MobGridPos.Y < 2) ? Vector2I.Down : Vector2I.Up*2;
 		}
 		about.Text = mobAbout[MobGridPos.Y * 3+MobGridPos.X];
 
