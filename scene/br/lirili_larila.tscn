@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://byuofas8qksdo" path="res://assets/brainrots/lirililarila/Lirl9.png" id="10_jbfxb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0x2q"]
-size = Vector2(160, 128)
+size = Vector2(180, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t2bbu"]
 animations = [{
@@ -60,7 +60,6 @@ MaxHp = 480.0
 area2D = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(64, 64)
@@ -76,7 +75,6 @@ centered = false
 [node name="Timer" type="Timer" parent="."]
 
 [node name="body" type="Area2D" parent="." groups=["Unit"]]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="body"]
 position = Vector2(63, 64)

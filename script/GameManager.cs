@@ -7,7 +7,7 @@ public partial class GameManager : Node2D
 	public Label MoneyLabel;
 	public override void _Ready()
 	{
-		Money = 50;
+		Money = 100;
 		MoneyLabel = GetNode<Label>("PurseCounter");
 	}
 	public override void _Process(double delta)

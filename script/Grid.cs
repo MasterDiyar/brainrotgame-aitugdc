@@ -91,8 +91,13 @@ public partial class Grid : Node2D
 
 	public BrainRoted GetMob(Vector2 point)
 	{
-		string[] mobAbout = ["Type: Lirili larila\n Cost: 50", "Type: Frigo Camelini\n Cost: 120", "Type: Udin din din dun\n Cost: 80"
-			,"Type: Trippi troppi\n Cost: 170", "Type: La Vacca Saturno Saturnita\n Cost: 320","Type: Cappucini Ballerini\n Cost: 100"],
+		string[] mobAbout = [
+		 "Type: Lirili larila. Close range unit\n Cost: 50",
+		 "Type: Frigo Camelini. Long range, freezing unit\n Cost: 120",
+		 "Type: Udin din din dun Close range unit\n Cost: 80",
+		 "Type: Trippi troppi. Long range, pushing unit\n Cost: 170",
+		 "Type: La Vacca Saturno Saturnita. Long range, strikes in three lines, piercing unit\n Cost: 320",
+		 "Type: Cappucini Ballerini. Producing prompts\n Cost: 90"],
 				paths = ["res://scene/br/lirili_larila.tscn", "res://scene/br/frigo.tscn", "res://scene/br/udindindindun.tscn",
 				"res://scene/br/trippitroppi.tscn", "res://scene/br/lavaka.tscn", "res://scene/br/balerina.tscn"];
 		try {

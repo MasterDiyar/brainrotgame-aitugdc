@@ -4,7 +4,7 @@ using System;
 public partial class Balerina : BrainRoted
 {
 	private AnimatedSprite2D _icon;
-	[Export] public override float Cost { get; set; }= 100;
+	[Export] public override float Cost { get; set; }= 90;
 	[Export] public float CreateRate = 6.5f;
 	public override void _Ready()
 	{

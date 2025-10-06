@@ -4,7 +4,7 @@ using System;
 public partial class Lavaka : BrainRoted
 {
 	private AnimatedSprite2D _icon;
-	[Export] public override float Cost { get; set; }= 80;
+	[Export] public override float Cost { get; set; }= 320;
 	[Export] public float AttackRate = 0.2f;
 	private int line = 0;
 	private Vector2[] angleNorm = [new Vector2(0.866f ,0.5f), new Vector2(1, 0), new Vector2(0.866f ,-0.5f)];
