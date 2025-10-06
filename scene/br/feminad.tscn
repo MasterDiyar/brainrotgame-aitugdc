@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://mxmivsit6xml"]
+
+[ext_resource type="Script" uid="uid://b48ixl8dca4b8" path="res://scene/br/Feminad.cs" id="1_ggmjg"]
+[ext_resource type="Texture2D" uid="uid://cmwdjlxstdbku" path="res://assets/normis/femineright.png" id="1_gt63g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt63g"]
+size = Vector2(64, 128)
+
+[node name="Feminad" type="Node2D" node_paths=PackedStringArray("MeArea")]
+script = ExtResource("1_ggmjg")
+MaxHp = 200.0
+Speed = 16.0
+Damage = 50.0
+MeArea = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_gt63g")
+
+[node name="Femineright" type="Sprite2D" parent="."]
+texture = ExtResource("1_gt63g")

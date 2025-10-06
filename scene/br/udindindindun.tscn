@@ -44,23 +44,26 @@ size = Vector2(200, 40)
 texture_filter = 3
 script = ExtResource("1_t4k6x")
 _attackTimer = NodePath("Timer")
-area2D = NodePath("Area2D")
+MaxHp = 400.0
+area2D = NodePath("Area2D2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_am4tn")
-frame_progress = 0.84088314
+frame_progress = 0.9503042
+centered = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="." groups=["Unit"]]
+[node name="TElo" type="Area2D" parent="." groups=["Unit"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TElo"]
+position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_5iav2")
 
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(128, 0)
+position = Vector2(128, 64)
 shape = SubResource("RectangleShape2D_asvt7")
 debug_color = Color(0.65882355, 0.5176471, 0, 0.34117648)
 

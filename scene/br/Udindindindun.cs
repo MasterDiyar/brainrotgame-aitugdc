@@ -30,7 +30,7 @@ public partial class Udindindindun : BrainRoted
 	public void DealDamage()
 	{
 		var sharp = GD.Load<PackedScene>("res://scene/br/fist.tscn").Instantiate<Fist>();
-		sharp.Position = _icon.GlobalPosition+Vector2.Down*35+Vector2.Right*120;
+		sharp.Position = _icon.GlobalPosition+Vector2.Down*70+Vector2.Right*120;
 		GetParent().AddChild(sharp);
 		TimerCheck();
 	}

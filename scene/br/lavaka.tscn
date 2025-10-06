@@ -1,3 +1,88 @@
-[gd_scene format=3 uid="uid://cdglsrrjvje5k"]
+[gd_scene load_steps=14 format=3 uid="uid://cdglsrrjvje5k"]
 
-[node name="lavaka" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dnq2jpi6ygsat" path="res://assets/brainrots/lavaka/lavaka1.png" id="1_16s0t"]
+[ext_resource type="Script" uid="uid://bfqswhe1d3c7p" path="res://scene/br/Lavaka.cs" id="1_ryt7o"]
+[ext_resource type="Texture2D" uid="uid://cq34l5yj6h18p" path="res://assets/brainrots/lavaka/lavaka2.png" id="2_ryt7o"]
+[ext_resource type="Texture2D" uid="uid://cgm52qnj6ujjf" path="res://assets/brainrots/lavaka/lavaka3.png" id="3_gibqj"]
+[ext_resource type="Texture2D" uid="uid://djq50dg6w4rqb" path="res://assets/brainrots/lavaka/lavaka4.png" id="4_snyvs"]
+[ext_resource type="Texture2D" uid="uid://2hemwte5535b" path="res://assets/brainrots/lavaka/lavaka5.png" id="5_fg0vx"]
+[ext_resource type="Texture2D" uid="uid://olblcmuq3662" path="res://assets/brainrots/lavaka/lavaka6.png" id="6_1dgy2"]
+[ext_resource type="Texture2D" uid="uid://d08sqxyl3baav" path="res://assets/brainrots/lavaka/lavaka7.png" id="7_7hhup"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kiaxp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_16s0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ryt7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gibqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_snyvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fg0vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1dgy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7hhup")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aym7"]
+size = Vector2(640, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3sj6"]
+size = Vector2(640, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uato"]
+size = Vector2(640, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pws46"]
+size = Vector2(128, 128)
+
+[node name="lavaka" type="Node2D" node_paths=PackedStringArray("_attackTimer", "area2D")]
+texture_filter = 3
+script = ExtResource("1_ryt7o")
+_attackTimer = NodePath("Timer")
+MaxHp = 80.0
+area2D = NodePath("Area2D")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 64)
+sprite_frames = SubResource("SpriteFrames_kiaxp")
+frame_progress = 0.2820903
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(320, 192)
+rotation = 0.5235988
+shape = SubResource("RectangleShape2D_8aym7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(384, 0)
+shape = SubResource("RectangleShape2D_h3sj6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(320, -192)
+rotation = -0.5235988
+shape = SubResource("RectangleShape2D_7uato")
+
+[node name="Area2D2" type="Area2D" parent="." groups=["Unit"]]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_pws46")

@@ -20,6 +20,7 @@ public partial class Snezhok : Node2D
 			ppl.TakeDamage(6);
 			ppl.Speed -= (ppl.Speed > 4) ? 1: 0;
 			ppl.Modulate = new Color(ppl.Modulate.R-0.05f, ppl.Modulate.G-0.05f, 1, 1);
+			QueueFree();
 			
 		}
 	}

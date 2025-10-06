@@ -5,7 +5,7 @@ using Godot;
 public partial class BrainRoted:Node2D 
 {
     [Export]protected Timer _attackTimer;
-    public float MaxHp { get; set; }
+    [Export]public float MaxHp { get; set; }
     public float Hp { get; set; } 
     public virtual float Cost  { get; set; }
     
@@ -17,6 +17,7 @@ public partial class BrainRoted:Node2D
 
     public override void _Ready()
     {
+        Hp = MaxHp;
         _attackTimer = GetNode<Timer>("Timer");
 
         area2D.AreaEntered += EreaEntered;
@@ -25,6 +26,7 @@ public partial class BrainRoted:Node2D
 
     public void TakeDamage(float damage)
     {
+        GD.Print("Taking damage: "+damage);
         Hp -= damage;
         if (Hp <= 0) QueueFree();
     }

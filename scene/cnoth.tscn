@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1euuafnffp4f"]
+[gd_scene load_steps=8 format=3 uid="uid://c1euuafnffp4f"]
 
 [ext_resource type="Texture2D" uid="uid://xpnysk8b3vlq" path="res://assets/brainrots/ram.png" id="1_wiaat"]
 [ext_resource type="Texture2D" uid="uid://btjppsjejqjhs" path="res://assets/brainrots/lirililarila/Lirl1.png" id="2_2126l"]
 [ext_resource type="Texture2D" uid="uid://bshqk7jawdvj0" path="res://assets/brainrots/frigo camelo/frigo1.png" id="3_2126l"]
 [ext_resource type="Texture2D" uid="uid://7c0nhxuvjljo" path="res://assets/brainrots/udindindin/Sprite-0016.png" id="4_ogfnd"]
+[ext_resource type="Texture2D" uid="uid://bgyme6j4www4s" path="res://assets/brainrots/trippitroppo/tripp1.png" id="5_y7lfm"]
+[ext_resource type="Texture2D" uid="uid://dnq2jpi6ygsat" path="res://assets/brainrots/lavaka/lavaka1.png" id="6_q1xmo"]
+[ext_resource type="Texture2D" uid="uid://cb1yx1e20l01a" path="res://assets/brainrots/ballerini/fds1.png" id="7_q1xmo"]
 
 [node name="cnoth" type="Control"]
 texture_filter = 3
@@ -39,22 +42,19 @@ texture = ExtResource("4_ogfnd")
 position = Vector2(65, 197)
 texture = ExtResource("1_wiaat")
 
+[node name="Tripp1" type="Sprite2D" parent="Ram4"]
+texture = ExtResource("5_y7lfm")
+
 [node name="Ram5" type="Sprite2D" parent="."]
 position = Vector2(197, 197)
 texture = ExtResource("1_wiaat")
+
+[node name="Lavaka1" type="Sprite2D" parent="Ram5"]
+texture = ExtResource("6_q1xmo")
 
 [node name="Ram6" type="Sprite2D" parent="."]
 position = Vector2(329, 197)
 texture = ExtResource("1_wiaat")
 
-[node name="Ram7" type="Sprite2D" parent="."]
-position = Vector2(65, 329)
-texture = ExtResource("1_wiaat")
-
-[node name="Ram8" type="Sprite2D" parent="."]
-position = Vector2(197, 329)
-texture = ExtResource("1_wiaat")
-
-[node name="Ram9" type="Sprite2D" parent="."]
-position = Vector2(329, 329)
-texture = ExtResource("1_wiaat")
+[node name="Fds1" type="Sprite2D" parent="Ram6"]
+texture = ExtResource("7_q1xmo")

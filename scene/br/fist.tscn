@@ -11,6 +11,7 @@ texture_filter = 3
 script = ExtResource("1_r8wfr")
 
 [node name="Fist" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_loxf4")
 
 [node name="Area2D" type="Area2D" parent="Fist"]

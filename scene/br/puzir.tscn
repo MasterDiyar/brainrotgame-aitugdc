@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://duxyui0qtob7k"]
+
+[ext_resource type="Script" uid="uid://xegqs4bi1x0v" path="res://scene/br/Puzir.cs" id="1_3lnmk"]
+[ext_resource type="Texture2D" uid="uid://cwih8bfglakun" path="res://assets/brainrots/trippitroppo/puzir.png" id="1_aggin"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hsjl7"]
+radius = 64.0
+
+[node name="puzir" type="Node2D"]
+script = ExtResource("1_3lnmk")
+
+[node name="Puzir" type="Sprite2D" parent="."]
+position = Vector2(2, -2)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_aggin")
+
+[node name="Area2D" type="Area2D" parent="Puzir"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puzir/Area2D"]
+shape = SubResource("CircleShape2D_hsjl7")

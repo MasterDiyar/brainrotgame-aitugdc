@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="BrainRot"
-run/main_scene="uid://cw65l715jvrpl"
+run/main_scene="uid://cu2p3qbkrv5fa"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bshqk7jawdvj0"
 
 [display]
 

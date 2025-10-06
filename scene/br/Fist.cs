@@ -5,7 +5,7 @@ public partial class Fist : Node2D
 {
 	Area2D area2D;
 	Sprite2D sprite2D;
-	private double AliveTime = 1;
+	private double AliveTime = 0.7f;
 	public override void _Ready()
 	{
 		sprite2D = GetNode<Sprite2D>("Fist");
@@ -17,9 +17,9 @@ public partial class Fist : Node2D
 	{
 		if (area.GetParent() is People ppl)
 		{
-			ppl.TakeDamage(6);
-			ppl.Speed -= (ppl.Speed > 4) ? 1: 0;
-			ppl.Modulate = new Color(ppl.Modulate.R-0.05f, ppl.Modulate.G-0.05f, 1, 1);
+			ppl.TakeDamage(17);
+			ppl.Speed -= (ppl.Speed > 4) ? 3: 0;
+			QueueFree();
 			
 		}
 	}
@@ -28,7 +28,7 @@ public partial class Fist : Node2D
 	{
 		AliveTime -= delta;
 		if (AliveTime <= 0) QueueFree();
-		sprite2D.Position += Vector2.Right * 60*(float)delta;
+		sprite2D.Position += Vector2.Right * 110*(float)delta;
 		
 	}
 }

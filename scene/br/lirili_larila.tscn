@@ -56,6 +56,7 @@ size = Vector2(126, 128)
 texture_filter = 3
 script = ExtResource("1_y2fi2")
 _attackTimer = NodePath("Timer")
+MaxHp = 480.0
 area2D = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]

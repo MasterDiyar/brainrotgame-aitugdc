@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmdiyfrddn7va"]
+
+[ext_resource type="Script" uid="uid://clxux34hsc0cg" path="res://scene/Loose.cs" id="1_faqca"]
+[ext_resource type="Texture2D" uid="uid://s642ddj2dppj" path="res://assets/brainrots/what.png" id="1_ydcl7"]
+[ext_resource type="FontFile" uid="uid://c4wlm7p7vx28j" path="res://other/alagard.ttf" id="2_g2kxu"]
+
+[node name="loose" type="Node2D"]
+script = ExtResource("1_faqca")
+
+[node name="What" type="Sprite2D" parent="."]
+texture = ExtResource("1_ydcl7")
+centered = false
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1571.0
+offset_top = 295.0
+offset_right = 1624.0
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("2_g2kxu")
+theme_override_font_sizes/font_size = 96
+text = "Leave
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1435.0
+offset_top = 29.0
+offset_right = 1884.0
+offset_bottom = 216.0

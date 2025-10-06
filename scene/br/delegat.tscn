@@ -6,9 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtjgy"]
 size = Vector2(42, 123)
 
-[node name="Delegat" type="Node2D"]
+[node name="Delegat" type="Node2D" node_paths=PackedStringArray("MeArea")]
 texture_filter = 3
 script = ExtResource("1_e7i7q")
+MeArea = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]
 

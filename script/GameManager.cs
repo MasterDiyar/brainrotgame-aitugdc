@@ -7,11 +7,21 @@ public partial class GameManager : Node2D
 	public Label MoneyLabel;
 	public override void _Ready()
 	{
-		Money = 500;
+		Money = 50;
 		MoneyLabel = GetNode<Label>("PurseCounter");
 	}
 	public override void _Process(double delta)
 	{
-		MoneyLabel.Text = "Prompt: "+Money.ToString();
+		Money += (float)delta;
+		MoneyLabel.Text = "Prompt: "+ ((int)Money).ToString();
+	}
+
+	public void leaveGame()
+	{
+		var looser = GD.Load<PackedScene>("res://scene/loose.tscn").Instantiate();
+		looser.GetNode<Label>("Label").Text = GetNode<Mobspawner>("mobspawner").waveLevel.ToString()+" level alived! Molodec";
+		GetParent().AddChild(looser);
+		
+		GetParent().RemoveChild(this);
 	}
 }

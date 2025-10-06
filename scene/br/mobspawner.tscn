@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bskml3ne28i2"]
+
+[ext_resource type="Script" uid="uid://d26vi5kka3k4q" path="res://scene/br/Mobspawner.cs" id="1_em6gn"]
+[ext_resource type="PackedScene" uid="uid://cd5fclp022n1m" path="res://scene/br/vizov.tscn" id="2_7d1kh"]
+
+[node name="mobspawner" type="Node2D"]
+script = ExtResource("1_em6gn")
+
+[node name="Label" parent="." instance=ExtResource("2_7d1kh")]
+offset_left = -574.0
+offset_top = -195.0
+offset_right = -354.0
+offset_bottom = -135.0
