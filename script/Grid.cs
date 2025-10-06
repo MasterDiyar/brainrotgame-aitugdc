@@ -4,6 +4,21 @@ using System.Collections.Generic;
 
 public partial class Grid : Node2D
 {
+	private string[] mobAbout =
+	[
+		"Type: Lirili larila. Close range unit\n Cost: 50",
+		"Type: Frigo Camelini. Long range, freezing unit\n Cost: 120",
+		"Type: Udin din din dun Ma din din dun\n Close range unit\n Cost: 80",
+		"Type: Trippi troppi. Long range, pushing unit\n Cost: 170",
+		"Type: La Vacca Saturno Saturnita. Long range, strikes in three lines, piercing unit\n Cost: 320",
+		"Type: Cappucini Ballerini. Producing prompts\n Cost: 85",
+		"Type: Tung Tung Tung Tung Tung Tung Tung Tung Tung Sahur\n" +
+		"Close range fast attacking unit\nCost:110",
+		"Type: Bombardiro Crocodilo. Self Exploding unit\n Cost: 30",
+		"Type: Skibidi Toilet. long range unit, piercing true damage\n Cost: 410"
+	],paths = ["res://scene/br/lirili_larila.tscn", "res://scene/br/frigo.tscn", "res://scene/br/udindindindun.tscn",
+      				"res://scene/br/trippitroppi.tscn", "res://scene/br/lavaka.tscn", "res://scene/br/balerina.tscn",
+      				"res://scene/br/tun_tun_tun.tscn", "res://scene/br/bombard.tscn", "res://scene/br/toilet.tscn"];
 	public Vector2 StartPos = new Vector2(559, 222),
 		MobStartPos = new Vector2(10, 580),
 		GridScale = Vector2.One*128;
@@ -47,6 +62,20 @@ public partial class Grid : Node2D
 			_isChoosing = true;
 			MobGridPos = Vector2I.Zero;
 		}
+		if (Input.IsActionJustPressed("delete")) 
+		{
+			var mob = Gridrot[ChooseGridPos.X, ChooseGridPos.Y];
+			if (mob != null)
+			{
+				parent.Money += mob.Cost / 2;
+				mob.QueueFree(); 
+				Gridrot[ChooseGridPos.X, ChooseGridPos.Y] = null; 
+				GD.Print($"Моб на {ChooseGridPos} удалён");
+			}
+			else
+				GD.Print("На этой клетке никого нет");
+         			
+		}
 		_chooseGrid.Position = StartPos + (ChooseGridPos * 128) + (ChooseGridPos.Y * Vector2.Down * 21) - (Vector2.One * 2);
 	}
 
@@ -59,8 +88,9 @@ public partial class Grid : Node2D
 		}if (Input.IsActionJustPressed("up")) {	
 			MobGridPos += (MobGridPos.Y > 0) ? Vector2I.Up : Vector2I.Zero;
 		}if (Input.IsActionJustPressed("down")) {
-			MobGridPos += (MobGridPos.Y < 1) ? Vector2I.Down : Vector2I.Zero;
+			MobGridPos += (MobGridPos.Y < 2) ? Vector2I.Down : Vector2I.Zero;
 		}
+		about.Text = mobAbout[MobGridPos.Y * 3+MobGridPos.X];
 
 		if (Input.IsActionJustPressed("yes"))
 		{
@@ -80,6 +110,8 @@ public partial class Grid : Node2D
 			}
 			else GD.Print(Gridrot[ChooseGridPos.X, ChooseGridPos.Y]);
 		}
+		
+		
 
 		if (Input.IsActionJustPressed("no"))
 		{
@@ -91,20 +123,10 @@ public partial class Grid : Node2D
 
 	public BrainRoted GetMob(Vector2 point)
 	{
-		string[] mobAbout = [
-		 "Type: Lirili larila. Close range unit\n Cost: 50",
-		 "Type: Frigo Camelini. Long range, freezing unit\n Cost: 120",
-		 "Type: Udin din din dun Close range unit\n Cost: 80",
-		 "Type: Trippi troppi. Long range, pushing unit\n Cost: 170",
-		 "Type: La Vacca Saturno Saturnita. Long range, strikes in three lines, piercing unit\n Cost: 320",
-		 "Type: Cappucini Ballerini. Producing prompts\n Cost: 90"],
-				paths = ["res://scene/br/lirili_larila.tscn", "res://scene/br/frigo.tscn", "res://scene/br/udindindindun.tscn",
-				"res://scene/br/trippitroppi.tscn", "res://scene/br/lavaka.tscn", "res://scene/br/balerina.tscn"];
 		try {
         	int width = 3;
         	int index = (int)point.Y * width + (int)point.X;
         	string mob = paths[index];
-			about.Text = mobAbout[index];
         	return GD.Load<PackedScene>(mob).Instantiate<BrainRoted>();
         }catch (IndexOutOfRangeException e)
         {

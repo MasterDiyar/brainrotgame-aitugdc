@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cw65l715jvrpl"]
+[gd_scene load_steps=17 format=3 uid="uid://cw65l715jvrpl"]
 
 [ext_resource type="PackedScene" uid="uid://dfwps5tmxe0ff" path="res://scene/mainmap.tscn" id="1_5kiuu"]
 [ext_resource type="Script" uid="uid://5rwt6g847ccy" path="res://script/GameManager.cs" id="1_xwcet"]
@@ -9,8 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://c1k05vpq1ed2b" path="res://scene/br/delegat.tscn" id="7_qpk70"]
 [ext_resource type="Texture2D" uid="uid://bl54myloqe2kj" path="res://assets/map/albion.png" id="8_ll5lq"]
 [ext_resource type="PackedScene" uid="uid://bskml3ne28i2" path="res://scene/br/mobspawner.tscn" id="9_17rxn"]
+[ext_resource type="PackedScene" uid="uid://burb50r017qyw" path="res://scene/norm/rebenak.tscn" id="9_81276"]
 [ext_resource type="PackedScene" uid="uid://mxmivsit6xml" path="res://scene/br/feminad.tscn" id="10_ym5sv"]
 [ext_resource type="PackedScene" uid="uid://b2xfbdl3yqy51" path="res://scene/br/uchitel.tscn" id="11_sng2h"]
+[ext_resource type="PackedScene" uid="uid://rqxxj65jgxu" path="res://scene/norm/koleskak.tscn" id="12_ve786"]
+[ext_resource type="PackedScene" uid="uid://t3don1bfy88" path="res://scene/norm/copyright.tscn" id="14_0lu6w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ll5lq"]
 font = ExtResource("4_xlg7c")
@@ -69,7 +72,7 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Controls:
 W-up A-left S-down D-right
-Q-choose E-exit"
+Q-choose E-exit R-delete"
 label_settings = SubResource("LabelSettings_ll5lq")
 
 [node name="grid" parent="." node_paths=PackedStringArray("_brainrotSpawnNode", "about") instance=ExtResource("2_dbls1")]
@@ -99,6 +102,6 @@ scale = Vector2(1.25, 1)
 texture = ExtResource("8_ll5lq")
 
 [node name="mobspawner" parent="." instance=ExtResource("9_17rxn")]
-MobScenes = [ExtResource("7_qpk70"), ExtResource("10_ym5sv"), ExtResource("11_sng2h")]
+MobScenes = [ExtResource("9_81276"), ExtResource("7_qpk70"), ExtResource("10_ym5sv"), ExtResource("12_ve786"), ExtResource("11_sng2h"), ExtResource("14_0lu6w")]
 SpawnParentPath = NodePath("../normals")
 StaggerBetweenSpawns = 1.0

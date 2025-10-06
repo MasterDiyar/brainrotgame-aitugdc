@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://dn7pvn0yqiv7v"]
+
+[ext_resource type="Script" uid="uid://bgx223kryd52n" path="res://scene/br/TunTunTun.cs" id="1_hrp8b"]
+[ext_resource type="Texture2D" uid="uid://dx2xc5ft6l5mh" path="res://assets/brainrots/tuntuntun/tuntuntun1.png" id="1_hygdi"]
+[ext_resource type="Texture2D" uid="uid://c6x6b11wvn13l" path="res://assets/brainrots/tuntuntun/tuntuntun2.png" id="2_hrp8b"]
+[ext_resource type="Texture2D" uid="uid://ce0be782qfp14" path="res://assets/brainrots/tuntuntun/tuntuntun3.png" id="3_v3qb7"]
+[ext_resource type="Texture2D" uid="uid://do5ky7d4odivg" path="res://assets/brainrots/tuntuntun/tuntuntun4.png" id="4_43ccj"]
+[ext_resource type="Texture2D" uid="uid://chi65imr0g1cb" path="res://assets/brainrots/tuntuntun/tuntuntun5.png" id="5_3rywy"]
+[ext_resource type="Texture2D" uid="uid://b6kruuimsmh6t" path="res://assets/brainrots/tuntuntun/tuntuntun6.png" id="6_uegwh"]
+[ext_resource type="Texture2D" uid="uid://qgiqvbyg4oip" path="res://assets/brainrots/tuntuntun/tuntuntun7.png" id="7_11ory"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hygdi"]
+size = Vector2(242, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eydw1"]
+size = Vector2(88, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40j7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hygdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hrp8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v3qb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_43ccj")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_3rywy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uegwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_11ory")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="TunTunTun" type="Node2D" node_paths=PackedStringArray("_attackTimer", "area2D")]
+script = ExtResource("1_hrp8b")
+Cost = 110.0
+_attackTimer = NodePath("Timer")
+MaxHp = 120.0
+area2D = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(135, 66.5)
+shape = SubResource("RectangleShape2D_hygdi")
+
+[node name="telo" type="Area2D" parent="." groups=["Unit"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="telo"]
+position = Vector2(45, 66)
+shape = SubResource("RectangleShape2D_eydw1")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_40j7n")
+frame_progress = 0.24482572
+centered = false

@@ -8,7 +8,7 @@ public partial class Uchitel :People
     public override void TakeDamage(float amount)
     {
         base.TakeDamage(amount/damagedCount);
-        damagedCount += 0.2f;
+        damagedCount += 0.05f;
     }
 }
 

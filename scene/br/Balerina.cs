@@ -4,7 +4,7 @@ using System;
 public partial class Balerina : BrainRoted
 {
 	private AnimatedSprite2D _icon;
-	[Export] public override float Cost { get; set; }= 90;
+	[Export] public override float Cost { get; set; }= 85;
 	[Export] public float CreateRate = 6.5f;
 	public override void _Ready()
 	{
@@ -26,6 +26,6 @@ public partial class Balerina : BrainRoted
 	public void DealDamage()
 	{
 		var man = GetParent().GetParent<GameManager>();
-		man.Money += 40;
+		man.Money += 35;
 	}
 }

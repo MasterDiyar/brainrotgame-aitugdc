@@ -1,0 +1,83 @@
+[gd_scene load_steps=15 format=3 uid="uid://db4ufitufsfco"]
+
+[ext_resource type="Texture2D" uid="uid://bg7n6lcmobhdi" path="res://assets/brainrots/skibidi/toilet1.png" id="1_705t1"]
+[ext_resource type="Script" uid="uid://dtv33g3hsnnbp" path="res://scene/br/Toilet.cs" id="1_u25dd"]
+[ext_resource type="Texture2D" uid="uid://ckod1llmyoqiq" path="res://assets/brainrots/skibidi/toilet2.png" id="2_u25dd"]
+[ext_resource type="Texture2D" uid="uid://cm4pyt4p0xan5" path="res://assets/brainrots/skibidi/toilet3.png" id="3_votg4"]
+[ext_resource type="Texture2D" uid="uid://bi0kxxwy71jf3" path="res://assets/brainrots/skibidi/toilet4.png" id="4_pbn4k"]
+[ext_resource type="Texture2D" uid="uid://d1b3dxxav67us" path="res://assets/brainrots/skibidi/toilet5.png" id="5_60rgc"]
+[ext_resource type="Texture2D" uid="uid://b1a1e6ki20ydn" path="res://assets/brainrots/skibidi/toilet6.png" id="6_dxp5a"]
+[ext_resource type="Texture2D" uid="uid://cxhnmjubikq0q" path="res://assets/brainrots/skibidi/toilet7.png" id="7_ud3fl"]
+[ext_resource type="Texture2D" uid="uid://cb44ks2jwyf03" path="res://assets/brainrots/skibidi/toilet8.png" id="8_c4sha"]
+[ext_resource type="Texture2D" uid="uid://yb6x13hvymqu" path="res://assets/brainrots/skibidi/toilet9.png" id="9_okupi"]
+[ext_resource type="Texture2D" uid="uid://cy68logh71b16" path="res://assets/brainrots/skibidi/toilet10.png" id="10_vqxch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_705t1"]
+size = Vector2(1101, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u25dd"]
+size = Vector2(123, 131)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4qy2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_705t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u25dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_votg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pbn4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_60rgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dxp5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ud3fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c4sha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_okupi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vqxch")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Toilet" type="Node2D" node_paths=PackedStringArray("_attackTimer", "area2D")]
+texture_filter = 3
+script = ExtResource("1_u25dd")
+_attackTimer = NodePath("Timer")
+MaxHp = 220.0
+area2D = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(673.5, 65.5)
+shape = SubResource("RectangleShape2D_705t1")
+
+[node name="Telo" type="Area2D" parent="." groups=["Unit"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Telo"]
+position = Vector2(61.5, 65.5)
+shape = SubResource("RectangleShape2D_u25dd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n4qy2")
+frame_progress = 0.3252482
+centered = false
+
+[node name="Timer" type="Timer" parent="."]

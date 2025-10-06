@@ -5,7 +5,8 @@ public partial class Ljump : Node2D
 {
 	Area2D area2D;
 	Sprite2D sprite2D;
-	private double AliveTime = 1;
+	public double AliveTime = 1;
+	public float damage = 16;
 	public override void _Ready()
 	{
 		sprite2D = GetNode<Sprite2D>("Lirilarijump");
@@ -17,7 +18,7 @@ public partial class Ljump : Node2D
 	{
 		if (area.GetParent() is People ppl)
 		{
-			ppl.TakeDamage(10);
+			ppl.TakeDamage(damage);
 			
 		}
 	}

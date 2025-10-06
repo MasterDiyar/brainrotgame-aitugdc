@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://rqxxj65jgxu"]
+
+[ext_resource type="Script" uid="uid://cobffeec17p8y" path="res://scene/norm/Koleskak.cs" id="1_awxd4"]
+[ext_resource type="Texture2D" uid="uid://bslt2h7mnqh4y" path="res://assets/normis/kolyaska.png" id="1_unaac"]
+[ext_resource type="PackedScene" uid="uid://burb50r017qyw" path="res://scene/norm/rebenak.tscn" id="2_pi8jj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awxd4"]
+size = Vector2(100, 96)
+
+[node name="koleskak" type="Node2D" node_paths=PackedStringArray("MeArea")]
+texture_filter = 3
+script = ExtResource("1_awxd4")
+rebenak = ExtResource("2_pi8jj")
+MaxHp = 400.0
+Speed = 2.0
+Damage = 90.0
+MeArea = NodePath("Area2D")
+
+[node name="Kolyaska" type="Sprite2D" parent="."]
+texture = ExtResource("1_unaac")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 10)
+shape = SubResource("RectangleShape2D_awxd4")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="Spawn"]

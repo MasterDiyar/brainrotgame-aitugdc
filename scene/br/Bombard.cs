@@ -1,0 +1,28 @@
+using Godot;
+using System;
+
+public partial class Bombard : BrainRoted
+{
+	private AnimatedSprite2D _icon;
+	[Export] public override float Cost { get; set; }= 30;
+	[Export] public float AttackRate = 1f;
+	public override void _Ready()
+	{
+		base._Ready();
+		
+		_icon = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_icon.Play();
+		
+		_attackTimer.Timeout += DealDamage;
+		_attackTimer.WaitTime = AttackRate;
+	}
+	
+
+	public void DealDamage()
+	{
+		var sharp = GD.Load<PackedScene>("res://scene/br/boom.tscn").Instantiate<Boom>();
+		sharp.Position = _icon.GlobalPosition;
+		GetParent().AddChild(sharp);
+		QueueFree();
+	}
+}

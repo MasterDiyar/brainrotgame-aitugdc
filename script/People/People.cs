@@ -36,7 +36,7 @@ public partial class People: Node2D
         if (area.IsInGroup("Unit") && area.GetParent() is BrainRoted roted)
         {
             roted.TakeDamage(Damage);  
-            Position += new Vector2(Speed, 0);
+            Position += new Vector2(5, 0);
         }
         
     }

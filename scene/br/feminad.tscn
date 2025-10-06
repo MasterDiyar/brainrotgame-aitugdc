@@ -9,7 +9,7 @@ size = Vector2(64, 128)
 [node name="Feminad" type="Node2D" node_paths=PackedStringArray("MeArea")]
 script = ExtResource("1_ggmjg")
 MaxHp = 200.0
-Speed = 16.0
+Speed = 11.0
 Damage = 50.0
 MeArea = NodePath("Area2D")
 

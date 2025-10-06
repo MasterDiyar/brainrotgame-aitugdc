@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://cap88x6fniwn7"]
+
+[ext_resource type="Texture2D" uid="uid://dl85xcmqdc46r" path="res://assets/brainrots/bombardilocrocodilo/croco1.png" id="1_7u5iu"]
+[ext_resource type="Script" uid="uid://1kbr30n1rj6f" path="res://scene/br/Bombard.cs" id="1_7uwof"]
+[ext_resource type="Texture2D" uid="uid://csgwlcxcyemqg" path="res://assets/brainrots/bombardilocrocodilo/croco2.png" id="2_7uwof"]
+[ext_resource type="Texture2D" uid="uid://bqhjtnrn7hgn5" path="res://assets/brainrots/bombardilocrocodilo/croco3.png" id="3_yljlt"]
+[ext_resource type="Texture2D" uid="uid://drowtna4j3tl7" path="res://assets/brainrots/bombardilocrocodilo/croco4.png" id="4_mpxs5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy868"]
+size = Vector2(220, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uwof"]
+size = Vector2(115, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_upk06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7u5iu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7uwof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yljlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mpxs5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Bombard" type="Node2D" node_paths=PackedStringArray("_attackTimer", "area2D")]
+texture_filter = 3
+script = ExtResource("1_7uwof")
+_attackTimer = NodePath("Timer")
+area2D = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(66, 55)
+shape = SubResource("RectangleShape2D_uy868")
+
+[node name="telo" type="Area2D" parent="." groups=["Unit"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="telo"]
+position = Vector2(67.5, 55.5)
+shape = SubResource("RectangleShape2D_7uwof")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_upk06")
+frame_progress = 0.689911
+centered = false
+
+[node name="Timer" type="Timer" parent="."]

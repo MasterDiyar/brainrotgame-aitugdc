@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://t3don1bfy88"]
+
+[ext_resource type="Texture2D" uid="uid://bqkq3foyftbcl" path="res://assets/normis/copyright.png" id="1_1s3ib"]
+[ext_resource type="Script" uid="uid://beasg6vngqgt2" path="res://scene/norm/Copyright.cs" id="1_leg1n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_14uy0"]
+radius = 64.0
+
+[node name="copyright" type="Node2D" node_paths=PackedStringArray("MeArea")]
+script = ExtResource("1_leg1n")
+MaxHp = 210.0
+Speed = 13.0
+Damage = 900.0
+MeArea = NodePath("Area2D")
+
+[node name="Copyright" type="Sprite2D" parent="."]
+texture = ExtResource("1_1s3ib")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_14uy0")

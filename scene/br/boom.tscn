@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhynmu6yw6tis"]
+
+[ext_resource type="Script" uid="uid://bo848xh4b1lgv" path="res://scene/br/Boom.cs" id="1_3bp0n"]
+[ext_resource type="Texture2D" uid="uid://b3x0m34m45nuk" path="res://assets/brainrots/bombardilocrocodilo/atak/boom1.png" id="1_keqni"]
+[ext_resource type="Texture2D" uid="uid://bm1leygng05fe" path="res://assets/brainrots/bombardilocrocodilo/atak/boom2.png" id="2_3bp0n"]
+[ext_resource type="Texture2D" uid="uid://d33d3gswrjj8r" path="res://assets/brainrots/bombardilocrocodilo/atak/boom3.png" id="3_hhhao"]
+[ext_resource type="Texture2D" uid="uid://dnll24h10yxjj" path="res://assets/brainrots/bombardilocrocodilo/atak/boom4.png" id="4_ru8dj"]
+[ext_resource type="Texture2D" uid="uid://dd1axgpqfo0xp" path="res://assets/brainrots/bombardilocrocodilo/atak/boom5.png" id="5_wh3su"]
+[ext_resource type="Texture2D" uid="uid://df7xhejr1emin" path="res://assets/brainrots/bombardilocrocodilo/atak/boom6.png" id="6_fiibe"]
+[ext_resource type="Texture2D" uid="uid://dodxp7db3bxk1" path="res://assets/brainrots/bombardilocrocodilo/atak/boom7.png" id="7_nrcxc"]
+[ext_resource type="Texture2D" uid="uid://nvjrlcloghdo" path="res://assets/brainrots/bombardilocrocodilo/atak/boom8.png" id="8_oshpa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kobgf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_keqni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3bp0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hhhao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ru8dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wh3su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fiibe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nrcxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oshpa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c17e6"]
+radius = 128.0
+
+[node name="Boom" type="Node2D"]
+script = ExtResource("1_3bp0n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_kobgf")
+frame_progress = 0.5575702
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+shape = SubResource("CircleShape2D_c17e6")

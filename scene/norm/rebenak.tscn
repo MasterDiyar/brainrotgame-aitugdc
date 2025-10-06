@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://burb50r017qyw"]
+
+[ext_resource type="Texture2D" uid="uid://ds18c7aibe6n" path="res://assets/normis/rebenok.png" id="1_nlwwq"]
+[ext_resource type="Script" uid="uid://dsyqo1oqmyiuj" path="res://scene/norm/Rebenak.cs" id="1_wt664"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlwwq"]
+size = Vector2(64, 96)
+
+[node name="rebenak" type="Node2D" node_paths=PackedStringArray("MeArea")]
+texture_filter = 3
+script = ExtResource("1_wt664")
+Speed = 36.0
+Damage = 20.0
+MeArea = NodePath("Area2D")
+
+[node name="Rebenok" type="Sprite2D" parent="."]
+texture = ExtResource("1_nlwwq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(6, 15)
+shape = SubResource("RectangleShape2D_nlwwq")

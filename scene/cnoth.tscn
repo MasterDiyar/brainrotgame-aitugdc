@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1euuafnffp4f"]
+[gd_scene load_steps=11 format=3 uid="uid://c1euuafnffp4f"]
 
 [ext_resource type="Texture2D" uid="uid://xpnysk8b3vlq" path="res://assets/brainrots/ram.png" id="1_wiaat"]
 [ext_resource type="Texture2D" uid="uid://btjppsjejqjhs" path="res://assets/brainrots/lirililarila/Lirl1.png" id="2_2126l"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bgyme6j4www4s" path="res://assets/brainrots/trippitroppo/tripp1.png" id="5_y7lfm"]
 [ext_resource type="Texture2D" uid="uid://dnq2jpi6ygsat" path="res://assets/brainrots/lavaka/lavaka1.png" id="6_q1xmo"]
 [ext_resource type="Texture2D" uid="uid://cb1yx1e20l01a" path="res://assets/brainrots/ballerini/fds1.png" id="7_q1xmo"]
+[ext_resource type="Texture2D" uid="uid://dx2xc5ft6l5mh" path="res://assets/brainrots/tuntuntun/tuntuntun1.png" id="8_fwryd"]
+[ext_resource type="Texture2D" uid="uid://bg7n6lcmobhdi" path="res://assets/brainrots/skibidi/toilet1.png" id="9_pttvo"]
+[ext_resource type="Texture2D" uid="uid://dl85xcmqdc46r" path="res://assets/brainrots/bombardilocrocodilo/croco1.png" id="10_137xu"]
 
 [node name="cnoth" type="Control"]
 texture_filter = 3
@@ -58,3 +61,28 @@ texture = ExtResource("1_wiaat")
 
 [node name="Fds1" type="Sprite2D" parent="Ram6"]
 texture = ExtResource("7_q1xmo")
+
+[node name="Ram7" type="Sprite2D" parent="."]
+position = Vector2(65, 329)
+texture = ExtResource("1_wiaat")
+
+[node name="Tuntuntun1" type="Sprite2D" parent="Ram7"]
+position = Vector2(34, -3)
+texture = ExtResource("8_fwryd")
+
+[node name="Ram8" type="Sprite2D" parent="."]
+position = Vector2(197, 329)
+texture = ExtResource("1_wiaat")
+
+[node name="Croco1" type="Sprite2D" parent="Ram8"]
+position = Vector2(-3, 3)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("10_137xu")
+
+[node name="Ram9" type="Sprite2D" parent="."]
+position = Vector2(329, 329)
+texture = ExtResource("1_wiaat")
+
+[node name="Toilet1" type="Sprite2D" parent="Ram9"]
+position = Vector2(-9, -15)
+texture = ExtResource("9_pttvo")
