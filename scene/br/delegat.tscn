@@ -9,6 +9,8 @@ size = Vector2(42, 123)
 [node name="Delegat" type="Node2D" node_paths=PackedStringArray("MeArea")]
 texture_filter = 3
 script = ExtResource("1_e7i7q")
+MaxHp = 160.0
+Speed = 20.5
 MeArea = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]

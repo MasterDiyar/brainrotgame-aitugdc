@@ -18,7 +18,8 @@ public partial class Meteor : Node2D
 	{
 		if (area.GetParent() is People ppl)
 		{
-			ppl.TakeDamage(7);
+			ppl.TakeDamage(11);
+			QueueFree();
 		
 		}
 	}

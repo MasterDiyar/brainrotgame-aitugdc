@@ -33,7 +33,7 @@ public partial class Toilet : BrainRoted
 		if (_icon.Frame == 6)
 		{
 			DealDamage();
-			
+			_icon.Frame = 7;
 		}
 	}
 

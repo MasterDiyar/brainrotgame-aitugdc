@@ -8,7 +8,7 @@ radius = 64.0
 
 [node name="copyright" type="Node2D" node_paths=PackedStringArray("MeArea")]
 script = ExtResource("1_leg1n")
-MaxHp = 210.0
+MaxHp = 3000.0
 Speed = 13.0
 Damage = 900.0
 MeArea = NodePath("Area2D")

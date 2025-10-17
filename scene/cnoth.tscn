@@ -1,6 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1euuafnffp4f"]
+[gd_scene load_steps=22 format=3 uid="uid://c1euuafnffp4f"]
 
+[ext_resource type="Shader" uid="uid://p8lkba11tisj" path="res://scene/chB.gdshader" id="1_137xu"]
+[ext_resource type="Script" uid="uid://clw76sqi4htqm" path="res://scene/br/Cnoth.cs" id="1_i6u2v"]
 [ext_resource type="Texture2D" uid="uid://xpnysk8b3vlq" path="res://assets/brainrots/ram.png" id="1_wiaat"]
+[ext_resource type="Material" uid="uid://m1upgnpjj251" path="res://scene/chBremake.material" id="2_3tgmk"]
 [ext_resource type="Texture2D" uid="uid://btjppsjejqjhs" path="res://assets/brainrots/lirililarila/Lirl1.png" id="2_2126l"]
 [ext_resource type="Texture2D" uid="uid://bshqk7jawdvj0" path="res://assets/brainrots/frigo camelo/frigo1.png" id="3_2126l"]
 [ext_resource type="Texture2D" uid="uid://7c0nhxuvjljo" path="res://assets/brainrots/udindindin/Sprite-0016.png" id="4_ogfnd"]
@@ -11,6 +14,38 @@
 [ext_resource type="Texture2D" uid="uid://bg7n6lcmobhdi" path="res://assets/brainrots/skibidi/toilet1.png" id="9_pttvo"]
 [ext_resource type="Texture2D" uid="uid://dl85xcmqdc46r" path="res://assets/brainrots/bombardilocrocodilo/croco1.png" id="10_137xu"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e4kx6"]
+shader = ExtResource("1_137xu")
+shader_parameter/recharge_progress = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8x88p"]
+shader = ExtResource("1_137xu")
+shader_parameter/recharge_progress = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50mxv"]
+shader = ExtResource("1_137xu")
+shader_parameter/recharge_progress = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r0nmj"]
+shader = ExtResource("1_137xu")
+shader_parameter/recharge_progress = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e41wd"]
+shader = ExtResource("1_137xu")
+shader_parameter/recharge_progress = 0.4170000198075
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ontlg"]
+shader = ExtResource("1_137xu")
+shader_parameter/recharge_progress = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pkb76"]
+shader = ExtResource("1_137xu")
+shader_parameter/recharge_progress = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kfyyp"]
+shader = ExtResource("1_137xu")
+shader_parameter/recharge_progress = 1.0
+
 [node name="cnoth" type="Control"]
 texture_filter = 3
 layout_mode = 3
@@ -19,70 +54,90 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i6u2v")
+rechargeTimes = PackedFloat32Array(18, 7, 6, 5, 12, 6, 7, 12, 14)
 
 [node name="Ram" type="Sprite2D" parent="."]
+material = ExtResource("2_3tgmk")
 position = Vector2(65, 65)
 texture = ExtResource("1_wiaat")
 
 [node name="Lirl1" type="Sprite2D" parent="Ram"]
+use_parent_material = true
 texture = ExtResource("2_2126l")
 
 [node name="Ram2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_e4kx6")
 position = Vector2(197, 65)
 texture = ExtResource("1_wiaat")
 
 [node name="Frigo1" type="Sprite2D" parent="Ram2"]
+use_parent_material = true
 texture = ExtResource("3_2126l")
 
 [node name="Ram3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8x88p")
 position = Vector2(329, 65)
 texture = ExtResource("1_wiaat")
 
 [node name="Sprite0016" type="Sprite2D" parent="Ram3"]
+use_parent_material = true
 texture = ExtResource("4_ogfnd")
 
 [node name="Ram4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_50mxv")
 position = Vector2(65, 197)
 texture = ExtResource("1_wiaat")
 
 [node name="Tripp1" type="Sprite2D" parent="Ram4"]
+use_parent_material = true
 texture = ExtResource("5_y7lfm")
 
 [node name="Ram5" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_r0nmj")
 position = Vector2(197, 197)
 texture = ExtResource("1_wiaat")
 
 [node name="Lavaka1" type="Sprite2D" parent="Ram5"]
+use_parent_material = true
 texture = ExtResource("6_q1xmo")
 
 [node name="Ram6" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_e41wd")
 position = Vector2(329, 197)
 texture = ExtResource("1_wiaat")
 
 [node name="Fds1" type="Sprite2D" parent="Ram6"]
+use_parent_material = true
 texture = ExtResource("7_q1xmo")
 
 [node name="Ram7" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ontlg")
 position = Vector2(65, 329)
 texture = ExtResource("1_wiaat")
 
 [node name="Tuntuntun1" type="Sprite2D" parent="Ram7"]
+use_parent_material = true
 position = Vector2(34, -3)
 texture = ExtResource("8_fwryd")
 
 [node name="Ram8" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pkb76")
 position = Vector2(197, 329)
 texture = ExtResource("1_wiaat")
 
 [node name="Croco1" type="Sprite2D" parent="Ram8"]
+use_parent_material = true
 position = Vector2(-3, 3)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("10_137xu")
 
 [node name="Ram9" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kfyyp")
 position = Vector2(329, 329)
 texture = ExtResource("1_wiaat")
 
 [node name="Toilet1" type="Sprite2D" parent="Ram9"]
+use_parent_material = true
 position = Vector2(-9, -15)
 texture = ExtResource("9_pttvo")

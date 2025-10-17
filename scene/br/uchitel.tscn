@@ -8,9 +8,9 @@ size = Vector2(64, 128)
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("MeArea")]
 script = ExtResource("1_3n0ud")
-MaxHp = 360.0
-Speed = 10.0
-Damage = 80.0
+MaxHp = 480.0
+Speed = 9.5
+Damage = 85.0
 MeArea = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]

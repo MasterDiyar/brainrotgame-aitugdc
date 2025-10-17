@@ -105,9 +105,11 @@ public partial class Mobspawner : Node2D
         if (MobScenes.Length == 1)
             return MobScenes[0];
 
-        float bias = Mathf.Clamp(waveLevel / 10f, 0f, 1f);
+        float bias = Mathf.Clamp(waveLevel / 80f, 0f, 1f);
         float indexF = Mathf.Pow(rng.Randf(), 1f - bias); // чем больше bias, тем ближе к 1
         int index = Mathf.Clamp(Mathf.FloorToInt(indexF * MobScenes.Length), 0, MobScenes.Length - 1);
+        if (waveLevel < 8 && index >=5)
+            return MobScenes[index-3];
         return MobScenes[index];
     }
 }

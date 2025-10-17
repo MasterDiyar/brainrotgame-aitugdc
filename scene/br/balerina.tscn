@@ -59,7 +59,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 2.0
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um28i"]
@@ -70,8 +70,9 @@ size = Vector2(128, 128)
 [node name="balerina" type="Node2D" node_paths=PackedStringArray("_attackTimer", "area2D")]
 texture_filter = 3
 script = ExtResource("1_h48wg")
+CreateRate = 13.0
 _attackTimer = NodePath("Timer")
-MaxHp = 80.0
+MaxHp = 120.0
 area2D = NodePath("Area2D2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

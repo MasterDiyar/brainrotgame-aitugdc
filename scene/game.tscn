@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cw65l715jvrpl"]
+[gd_scene load_steps=18 format=3 uid="uid://cw65l715jvrpl"]
 
 [ext_resource type="PackedScene" uid="uid://dfwps5tmxe0ff" path="res://scene/mainmap.tscn" id="1_5kiuu"]
 [ext_resource type="Script" uid="uid://5rwt6g847ccy" path="res://script/GameManager.cs" id="1_xwcet"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b2xfbdl3yqy51" path="res://scene/br/uchitel.tscn" id="11_sng2h"]
 [ext_resource type="PackedScene" uid="uid://rqxxj65jgxu" path="res://scene/norm/koleskak.tscn" id="12_ve786"]
 [ext_resource type="PackedScene" uid="uid://t3don1bfy88" path="res://scene/norm/copyright.tscn" id="14_0lu6w"]
+[ext_resource type="PackedScene" uid="uid://wjs4g1kxiyqy" path="res://scene/br/librarian.tscn" id="15_ve786"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ll5lq"]
 font = ExtResource("4_xlg7c")
@@ -75,9 +76,10 @@ W-up A-left S-down D-right
 Q-choose E-exit R-delete"
 label_settings = SubResource("LabelSettings_ll5lq")
 
-[node name="grid" parent="." node_paths=PackedStringArray("_brainrotSpawnNode", "about") instance=ExtResource("2_dbls1")]
+[node name="grid" parent="." node_paths=PackedStringArray("_brainrotSpawnNode", "about", "gLay") instance=ExtResource("2_dbls1")]
 _brainrotSpawnNode = NodePath("../brainrots")
 about = NodePath("../cnoth/ColorRect/Label")
+gLay = NodePath("../cnoth")
 
 [node name="PurseCounter" type="Label" parent="."]
 offset_left = 79.0
@@ -102,6 +104,6 @@ scale = Vector2(1.25, 1)
 texture = ExtResource("8_ll5lq")
 
 [node name="mobspawner" parent="." instance=ExtResource("9_17rxn")]
-MobScenes = [ExtResource("9_81276"), ExtResource("7_qpk70"), ExtResource("10_ym5sv"), ExtResource("12_ve786"), ExtResource("11_sng2h"), ExtResource("14_0lu6w")]
+MobScenes = [ExtResource("9_81276"), ExtResource("7_qpk70"), ExtResource("10_ym5sv"), ExtResource("15_ve786"), ExtResource("12_ve786"), ExtResource("11_sng2h"), ExtResource("14_0lu6w")]
 SpawnParentPath = NodePath("../normals")
 StaggerBetweenSpawns = 1.0

@@ -59,8 +59,9 @@ animations = [{
 [node name="Toilet" type="Node2D" node_paths=PackedStringArray("_attackTimer", "area2D")]
 texture_filter = 3
 script = ExtResource("1_u25dd")
+Cost = 280.0
 _attackTimer = NodePath("Timer")
-MaxHp = 220.0
+MaxHp = 410.0
 area2D = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]

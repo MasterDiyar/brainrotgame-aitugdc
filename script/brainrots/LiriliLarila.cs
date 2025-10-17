@@ -8,14 +8,13 @@ public partial class LiriliLarila : BrainRoted
 	
 	private Tween _tween;
 	
-	[Export] public float AttackRate = 3f;
+	[Export] public float AttackRate = 1.5f;
 	[Export] public float JumpHeight = 60f;
 
-	[Export] public override float Cost { get; set; } = 50;
+	[Export] public override float Cost { get; set; } = 80;
 	public override void _Ready()
 	{
 		base._Ready();
-		Cost = 50;
 		
 		_tween = GetTree().CreateTween();
 		_tween.Kill();

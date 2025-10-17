@@ -26,6 +26,6 @@ public partial class Balerina : BrainRoted
 	public void DealDamage()
 	{
 		var man = GetParent().GetParent<GameManager>();
-		man.Money += 35;
+		man.Money += 60;
 	}
 }

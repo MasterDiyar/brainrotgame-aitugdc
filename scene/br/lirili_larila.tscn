@@ -55,8 +55,11 @@ size = Vector2(126, 128)
 [node name="Lirili Larila" type="Node2D" node_paths=PackedStringArray("_attackTimer", "area2D")]
 texture_filter = 3
 script = ExtResource("1_y2fi2")
+AttackRate = 1.5
+JumpHeight = 80.0
+Cost = 80.0
 _attackTimer = NodePath("Timer")
-MaxHp = 480.0
+MaxHp = 2200.0
 area2D = NodePath("Area2D")
 
 [node name="Area2D" type="Area2D" parent="."]

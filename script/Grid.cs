@@ -31,6 +31,7 @@ public partial class Grid : Node2D
 	private Sprite2D _chooseGrid;
 	[Export] private Node2D _brainrotSpawnNode;
 	[Export] private Label about;
+	[Export] private Cnoth gLay;
 	
 	bool _isChoosing = false;
 
@@ -94,12 +95,11 @@ public partial class Grid : Node2D
 
 		if (Input.IsActionJustPressed("yes"))
 		{
+			if (!gLay.IsRecharged(MobGridPos.X + 3 * MobGridPos.Y)) return;
 			var mob = GetMob(MobGridPos);
 			if (Gridrot[ChooseGridPos.X, ChooseGridPos.Y] == null &&  parent.Money >= mob.Cost ) {
 				Gridrot[ChooseGridPos.X, ChooseGridPos.Y] = mob;
-				GD.Print("Before: " + parent.Money+" ", mob.Cost);
 				parent.Money -= mob.Cost;
-				GD.Print("After: " + parent.Money);
 				mob.Position = StartPos + (ChooseGridPos * 128) + (ChooseGridPos.Y * Vector2.Down * 21) - (Vector2.One * 2);
 				GetParent().GetNode("brainrots").AddChild(mob);
 
@@ -127,6 +127,8 @@ public partial class Grid : Node2D
         	int width = 3;
         	int index = (int)point.Y * width + (int)point.X;
         	string mob = paths[index];
+	        
+	        gLay.StartRecharge(index);
         	return GD.Load<PackedScene>(mob).Instantiate<BrainRoted>();
         }catch (IndexOutOfRangeException e)
         {

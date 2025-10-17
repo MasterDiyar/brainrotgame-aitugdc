@@ -8,7 +8,7 @@ public partial class Koleskak : People
 	private void Spawn()
 	{
 		
-		GetNode<Timer>("Timer").WaitTime = rnd.NextSingle()*8;
+		GetNode<Timer>("Timer").WaitTime = rnd.NextSingle()*8+1;
 		var kat = rebenak.Instantiate<Rebenak>();
 		kat.GlobalPosition = GlobalPosition+Vector2.Left*48;
 		GetParent().AddChild(kat);
